@@ -193,7 +193,7 @@ const PKGrowthLeaderWebsite = () => {
               </span>
             </h1>
             <h2 className="text-xl md:text-2xl font-semibold text-gray-300 mb-6">
-              Strategic Growth Leader | Market Creator | Agile Innovator
+              Strategic Growth Leader | Market Creator | Agile Innovator | Startup & Scale-up Ready
             </h2>
           </div>
           
