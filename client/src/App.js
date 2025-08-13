@@ -193,7 +193,7 @@ const PKGrowthLeaderWebsite = () => {
               </span>
             </h1>
             <h2 className="text-xl md:text-2xl font-semibold text-gray-300 mb-6">
-              Strategic Growth Leader | Market Creator | Commercial Innovator
+              Strategic Growth Leader | Market Creator | Agile Innovator
             </h2>
           </div>
           
@@ -464,7 +464,7 @@ const PKGrowthLeaderWebsite = () => {
                   <Rocket size={40} className="text-cyan-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold mb-2">Growth Readiness</h3>
                   <p className="text-gray-300">Available for immediate impact</p>
-                  <p className="text-gray-400 text-sm mt-2">Remote, hybrid, or relocation</p>
+                  <p className="text-gray-400 text-sm mt-2">Ready to mobilize</p>
                 </div>
               </div>
             </div>
