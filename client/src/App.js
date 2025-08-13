@@ -73,9 +73,9 @@ const PKGrowthLeaderWebsite = () => {
     {
       icon: Building2,
       stage: 'Market Creation',
-      title: 'Cross-Divisional IVF Launch',
+      title: 'NestVT Vitrification Device Launch',
       challenge: 'Enter crowded fertility tech market with differentiated positioning',
-      execution: 'Led unified campaign across two divisions with "future family success" narrative',
+      execution: 'Led multiple design sprints to build a "future family success" narrative',
       impact: 'Accelerated market entry, became template for internal collaboration'
     },
     {
