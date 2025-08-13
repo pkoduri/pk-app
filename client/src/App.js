@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, MapPin, Download, ExternalLink, ChevronDown, Code, Database, Palette, Zap } from 'lucide-react';
+import { 
+  Mail, MapPin, Download, ChevronDown, Award, Users, TrendingUp, 
+  Briefcase, GraduationCap, Target, Building2, Globe, Zap, 
+  BarChart3, Lightbulb, Brain, Rocket, DollarSign, Star,
+  CheckCircle, ArrowUpRight, Clock, Eye, Layers, ArrowRight,
+  Compass, Sparkles, Network
+} from 'lucide-react';
 
-const PersonalWebsite = () => {
+const PKGrowthLeaderWebsite = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -9,40 +15,123 @@ const PersonalWebsite = () => {
     setIsVisible(true);
   }, []);
 
-  const skills = [
-    { name: 'JavaScript', level: 90, icon: Code },
-    { name: 'React', level: 85, icon: Code },
-    { name: 'Node.js', level: 80, icon: Database },
-    { name: 'Python', level: 75, icon: Code },
-    { name: 'UI/UX Design', level: 70, icon: Palette },
-    { name: 'Data Visualization', level: 85, icon: Zap }
+  const growthMetrics = [
+    { 
+      icon: Rocket, 
+      value: '0→1', 
+      label: 'Market Creation',
+      color: 'text-emerald-400'
+    },
+    { 
+      icon: TrendingUp, 
+      value: '8%+', 
+      label: 'Market Share Growth',
+      color: 'text-blue-400'
+    },
+    { 
+      icon: Zap, 
+      value: '5→1wk', 
+      label: 'Cycle Time Reduction',
+      color: 'text-purple-400'
+    },
+    { 
+      icon: Globe, 
+      value: 'Global', 
+      label: 'Scale Experience',
+      color: 'text-cyan-400'
+    }
   ];
 
-  const projects = [
-    {
-      title: 'Interactive Chart Builder',
-      description: 'A powerful data visualization tool that creates beautiful, interactive charts from CSV data.',
-      tech: ['React', 'D3.js', 'Node.js', 'Recharts'],
-      image: '/api/placeholder/400/250',
-      demo: '#',
-      code: '#'
+  const coreCapabilities = [
+    { 
+      icon: Compass, 
+      title: 'Market Foresight', 
+      description: 'Anticipate shifts and align product roadmaps to emerging trends (AI, robotics, additive manufacturing)',
+      context: 'Strategic Thinking'
     },
-    {
-      title: 'E-commerce Platform',
-      description: 'Full-stack e-commerce solution with real-time inventory and payment processing.',
-      tech: ['React', 'Express', 'MongoDB', 'Stripe'],
-      image: '/api/placeholder/400/250',
-      demo: '#',
-      code: '#'
+    { 
+      icon: Rocket, 
+      title: 'Execution Agility', 
+      description: 'Apply design sprints and agile methods to compress go-to-market timelines',
+      context: 'Rapid Scaling'
     },
-    {
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates and team features.',
-      tech: ['React', 'Firebase', 'Material-UI'],
-      image: '/api/placeholder/400/250',
-      demo: '#',
-      code: '#'
+    { 
+      icon: Network, 
+      title: 'Influence & Alignment', 
+      description: 'Gain consensus among founders, boards, technical teams, and customers',
+      context: 'Cross-Functional Leadership'
+    },
+    { 
+      icon: Sparkles, 
+      title: 'Commercial Creativity', 
+      description: 'Differentiate offerings in commoditized markets through narrative and positioning',
+      context: 'Growth Innovation'
     }
+  ];
+
+  const growthAchievements = [
+    {
+      icon: Building2,
+      stage: 'Market Creation',
+      title: 'Cross-Divisional IVF Launch',
+      challenge: 'Enter crowded fertility tech market with differentiated positioning',
+      execution: 'Led unified campaign across two divisions with "future family success" narrative',
+      impact: 'Accelerated market entry, became template for internal collaboration'
+    },
+    {
+      icon: TrendingUp,
+      stage: 'Portfolio Scaling',
+      title: 'Visceral Endograft Turnaround',
+      challenge: 'Underperforming $250M+ portfolio losing market share',
+      execution: 'Multi-pronged repositioning with physician input and targeted adoption strategy',
+      impact: '~8% market share increase in 12 months, millions in incremental revenue'
+    },
+    {
+      icon: Zap,
+      stage: 'Tech Transformation',
+      title: 'AI-Enabled Marketing',
+      challenge: 'Manual processes taking 5+ weeks, limiting agility',
+      execution: 'Pioneered AI "Copilot" implementation with change management framework',
+      impact: 'Reduced cycles to 1-2 weeks, external consultant recognition'
+    },
+    {
+      icon: Globe,
+      stage: 'Global Expansion',
+      title: 'Thought Leadership Platform',
+      challenge: 'Establish credibility in new cardiac device market segment',
+      execution: 'Created VLEEM webinar with global KOLs, 200+ physician engagement',
+      impact: 'Significant increase in product inquiries, annual recurring event'
+    }
+  ];
+
+  const idealRoles = [
+    {
+      category: 'Early to Growth-Stage Ventures',
+      stage: 'Seed to Series C',
+      roles: [
+        'Director, Product Marketing',
+        'Director, Growth & Commercial Strategy',
+        'Head of Strategic Partnerships & Market Development',
+        'Entrepreneur-in-Residence (Venture Studio)'
+      ]
+    },
+    {
+      category: 'Midsize & Established Companies',
+      stage: 'Entrepreneurial Mandates',
+      roles: [
+        'General Manager / Business Unit Leader',
+        'Director, Corporate Innovation & Strategic Initiatives',
+        'Director, New Ventures & Emerging Markets',
+        'Head of Commercial Transformation'
+      ]
+    }
+  ];
+
+  const valueProposition = [
+    'Proven at "zero to one" and "one to ten" — from concept validation to global scaling',
+    'Cross-context adaptability — equally effective in startups and innovation labs',
+    'Network capital — access to KOLs, industry partners, and global commercial contacts',
+    'Execution under pressure — navigates complex launches without derailing budgets or timelines'
   ];
 
   const scrollToSection = (sectionId) => {
@@ -53,21 +142,24 @@ const PersonalWebsite = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
-      {/* Navigation */}
+      {/* Growth-Focused Navigation */}
       <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-md border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Your Name
+            <div className="flex items-center gap-3">
+              <Rocket size={24} className="text-purple-400" />
+              <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                P.K. Koduri
+              </div>
             </div>
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
+              {['home', 'capabilities', 'growth', 'leadership', 'connect'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`capitalize transition-colors ${
+                  className={`capitalize transition-colors font-medium ${
                     activeSection === section
-                      ? 'text-blue-400'
+                      ? 'text-purple-400'
                       : 'text-gray-300 hover:text-white'
                   }`}
                 >
@@ -79,70 +171,78 @@ const PersonalWebsite = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Growth Leader Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-white/10 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 4 + 1}px`,
-                height: `${Math.random() * 4 + 1}px`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${Math.random() * 3 + 2}s`
-              }}
-            />
-          ))}
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-600/20"></div>
         
-        <div className={`text-center z-10 max-w-4xl mx-auto px-6 transition-all duration-1000 ${
+        <div className={`text-center z-10 max-w-5xl mx-auto px-6 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-4xl font-bold">
-                YN
+          <div className="mb-6">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-400 to-cyan-600 p-1">
+              <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                <Rocket size={28} className="text-purple-400" />
               </div>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Full Stack Developer
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            I create beautiful, interactive web applications that solve real-world problems and deliver exceptional user experiences.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button 
-              onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-2xl"
-            >
-              View My Work
-            </button>
-            <button className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-black transition-all flex items-center gap-2 justify-center">
-              <Download size={20} />
-              Download Resume
-            </button>
+          <div className="mb-4">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                P.K. Koduri
+              </span>
+            </h1>
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-300 mb-6">
+              Strategic Growth Leader | Market Creator | Commercial Innovator
+            </h2>
           </div>
           
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-              <Github size={24} />
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
+            Strategic marketing and growth leader with 15+ years scaling innovative products in high-stakes, regulated markets. 
+            Operating at the intersection of <strong className="text-purple-400">strategy, technology, and execution</strong> — 
+            equally suited to founder-led startups, scale-ups, and intrapreneurial ventures.
+          </p>
+          
+          {/* Growth Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {growthMetrics.map((metric, index) => {
+              const Icon = metric.icon;
+              return (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/15 transition-all">
+                  <Icon size={24} className={`${metric.color} mx-auto mb-2`} />
+                  <div className="text-lg font-bold mb-1">{metric.value}</div>
+                  <div className="text-xs text-gray-400">{metric.label}</div>
+                </div>
+              );
+            })}
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button 
+              onClick={() => scrollToSection('growth')}
+              className="px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-2 justify-center"
+            >
+              <TrendingUp size={18} />
+              Growth Track Record
+            </button>
+            <a 
+              href="mailto:pkoduri@gmail.com"
+              className="px-8 py-3 border-2 border-purple-400 rounded-full font-semibold hover:bg-purple-400 hover:text-black transition-all flex items-center gap-2 justify-center"
+            >
+              <Mail size={18} />
+              Let's Build Together
             </a>
-            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-              <Linkedin size={24} />
-            </a>
-            <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-              <Mail size={24} />
-            </a>
+          </div>
+          
+          <div className="flex justify-center items-center gap-6 text-gray-300 text-sm">
+            <div className="flex items-center gap-2">
+              <MapPin size={16} className="text-purple-400" />
+              <span>Bloomington, IN</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Building2 size={16} className="text-cyan-400" />
+              <span>Currently: Cook Medical | Open to Growth Opportunities</span>
+            </div>
           </div>
         </div>
         
@@ -151,156 +251,247 @@ const PersonalWebsite = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-black/30">
+      {/* Core Capabilities */}
+      <section id="capabilities" className="py-20 bg-black/30">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            About Me
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Hi, I'm a passionate developer!</h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                With over 5 years of experience in web development, I specialize in creating 
-                modern, scalable applications using cutting-edge technologies. I love turning 
-                complex problems into simple, beautiful solutions.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                When I'm not coding, you can find me exploring new technologies, contributing 
-                to open source projects, or sharing my knowledge through blog posts and tutorials.
-              </p>
-              
-              <div className="flex items-center gap-2 text-gray-300">
-                <MapPin size={20} className="text-blue-400" />
-                <span>San Francisco, CA</span>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center">
-                <div className="text-6xl">👨‍💻</div>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Growth Leadership Capabilities
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Combining market foresight with execution agility to drive sustainable growth 
+              in both emerging and established contexts.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Skills & Technologies
-          </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => {
-              const Icon = skill.icon;
+          {/* Core Growth Capabilities */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {coreCapabilities.map((capability, index) => {
+              const Icon = capability.icon;
               return (
-                <div key={skill.name} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-2 bg-blue-500/20 rounded-lg">
-                      <Icon size={24} className="text-blue-400" />
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-start gap-6">
+                    <div className="p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl">
+                      <Icon size={32} className="text-purple-400" />
                     </div>
-                    <h3 className="text-xl font-semibold">{skill.name}</h3>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2">{capability.title}</h3>
+                      <p className="text-gray-300 mb-3 leading-relaxed">{capability.description}</p>
+                      <div className="flex items-center gap-2">
+                        <Star size={14} className="text-yellow-400" />
+                        <span className="text-sm text-cyan-400 font-medium">{capability.context}</span>
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-blue-400 to-purple-400 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                  <span className="text-sm text-gray-400 mt-2 block">{skill.level}%</span>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-black/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
-                <div className="h-48 bg-gradient-to-br from-blue-600/30 to-purple-600/30 flex items-center justify-center">
-                  <div className="text-4xl">🚀</div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-3">
-                    <a href={project.demo} className="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                      <ExternalLink size={16} />
-                      Demo
-                    </a>
-                    <a href={project.code} className="flex items-center gap-2 px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700 transition-colors text-sm">
-                      <Github size={16} />
-                      Code
-                    </a>
-                  </div>
-                </div>
+          {/* Growth Challenge Matrix */}
+          <div className="bg-gradient-to-r from-purple-900/40 to-cyan-900/40 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-8 text-center">Growth Challenge → Solution Matrix</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white/10 rounded-lg p-6">
+                <h4 className="font-bold text-purple-400 mb-3">Early-Stage Market Entry</h4>
+                <p className="text-gray-300 text-sm">Rapid segmentation, positioning, and launch execution with compressed timelines</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Let's Work Together
-          </h2>
-          
-          <div className="text-center">
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and collaborations. 
-              Whether you have a project in mind or just want to chat, feel free to reach out!
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a 
-                href="mailto:your.email@example.com" 
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-2xl flex items-center gap-2 justify-center"
-              >
-                <Mail size={20} />
-                Get In Touch
-              </a>
-              
-              <a 
-                href="#" 
-                className="px-8 py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-black transition-all flex items-center gap-2 justify-center"
-              >
-                <Download size={20} />
-                Download Resume
-              </a>
+              <div className="bg-white/10 rounded-lg p-6">
+                <h4 className="font-bold text-cyan-400 mb-3">Scaling Beyond Beachhead</h4>
+                <p className="text-gray-300 text-sm">Build repeatable frameworks for sales-marketing integration and portfolio growth</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6">
+                <h4 className="font-bold text-emerald-400 mb-3">Innovation in Regulated Environments</h4>
+                <p className="text-gray-300 text-sm">Pilot emerging technologies while ensuring compliance and adoption</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6">
+                <h4 className="font-bold text-yellow-400 mb-3">Global Expansion</h4>
+                <p className="text-gray-300 text-sm">Design channel strategies that adapt locally without diluting brand value</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Growth Track Record */}
+      <section id="growth" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Growth Track Record
+          </h2>
+          
+          <div className="space-y-8">
+            {growthAchievements.map((achievement, index) => {
+              const Icon = achievement.icon;
+              return (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-start gap-6">
+                    <div className="p-4 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl">
+                      <Icon size={32} className="text-purple-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
+                          {achievement.stage}
+                        </span>
+                        <h3 className="text-xl font-bold">{achievement.title}</h3>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                          <span className="text-red-300 font-medium">Challenge:</span>
+                          <p className="text-gray-300 mt-1">{achievement.challenge}</p>
+                        </div>
+                        
+                        <div>
+                          <span className="text-yellow-300 font-medium">Execution:</span>
+                          <p className="text-gray-300 mt-1">{achievement.execution}</p>
+                        </div>
+                        
+                        <div>
+                          <span className="text-green-300 font-medium">Impact:</span>
+                          <p className="text-cyan-400 font-semibold mt-1">{achievement.impact}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Value Proposition */}
+          <div className="mt-16 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-3">
+              <Target size={28} className="text-purple-400" />
+              Why Founders, Boards & Executives Choose P.K.
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {valueProposition.map((value, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle size={16} className="text-green-400 mt-1 flex-shrink-0" />
+                  <p className="text-gray-300">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Opportunities */}
+      <section id="leadership" className="py-20 bg-black/30">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Ideal Leadership Opportunities
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {idealRoles.map((context, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg">
+                    {index === 0 ? <Rocket size={24} className="text-purple-400" /> : <Building2 size={24} className="text-cyan-400" />}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">{context.category}</h3>
+                    <p className="text-gray-400 text-sm">{context.stage}</p>
+                  </div>
+                </div>
+                
+                <ul className="space-y-3">
+                  {context.roles.map((role, roleIndex) => (
+                    <li key={roleIndex} className="flex items-start gap-3">
+                      <ArrowRight size={16} className="text-purple-400 mt-1 flex-shrink-0" />
+                      <span className="text-gray-300">{role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Current Foundation */}
+          <div className="bg-white/5 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-center">Current Foundation</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-white/10 rounded-lg">
+                <Building2 size={32} className="text-blue-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Cook Medical LLC</h4>
+                <p className="text-sm text-gray-300">Divisional Marketing Manager</p>
+                <p className="text-xs text-gray-400 mt-1">Joint MedSurg & Vascular</p>
+              </div>
+              <div className="text-center p-6 bg-white/10 rounded-lg">
+                <GraduationCap size={32} className="text-emerald-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Academic Foundation</h4>
+                <p className="text-sm text-gray-300">MBA + Engineering</p>
+                <p className="text-xs text-gray-400 mt-1">Strategy + Technical Depth</p>
+              </div>
+              <div className="text-center p-6 bg-white/10 rounded-lg">
+                <Network size={32} className="text-purple-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Network Capital</h4>
+                <p className="text-sm text-gray-300">Global KOL Access</p>
+                <p className="text-xs text-gray-400 mt-1">Industry + Commercial</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Connect for Growth */}
+      <section id="connect" className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Ready to Drive Growth Together
+          </h2>
+          
+          <div className="text-center">
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              Whether you're validating a new market, scaling beyond your beachhead, or driving innovation 
+              within an established company — let's discuss how proven growth strategies can accelerate your vision.
+            </p>
+            
+            <div className="bg-gradient-to-r from-purple-900/40 to-cyan-900/40 rounded-2xl p-8 mb-12">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-center">
+                  <Mail size={40} className="text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Strategic Discussions</h3>
+                  <a href="mailto:pkoduri@gmail.com" className="text-purple-400 hover:text-purple-300 text-lg">
+                    pkoduri@gmail.com
+                  </a>
+                  <p className="text-gray-400 text-sm mt-2">Growth opportunities & partnerships</p>
+                </div>
+                <div className="text-center">
+                  <Rocket size={40} className="text-cyan-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Growth Readiness</h3>
+                  <p className="text-gray-300">Available for immediate impact</p>
+                  <p className="text-gray-400 text-sm mt-2">Remote, hybrid, or relocation</p>
+                </div>
+              </div>
+            </div>
+            
+            <a 
+              href="mailto:pkoduri@gmail.com?subject=Growth Leadership Discussion - P.K. Koduri" 
+              className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold hover:from-purple-700 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-2xl text-lg"
+            >
+              <Rocket size={20} />
+              Start the Growth Conversation
+              <ArrowUpRight size={20} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Growth-Focused Footer */}
       <footer className="py-8 bg-black/50 border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-gray-400">
-            © 2024 Your Name. Built with React and lots of ☕
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Rocket size={20} className="text-purple-400" />
+            <p className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              P.K. Koduri
+            </p>
+          </div>
+          <p className="text-gray-400 text-sm">
+            Strategic Growth Leader | Market Creator | Agile Innovator | Startup & Scale-up Ready
           </p>
         </div>
       </footer>
@@ -308,4 +499,4 @@ const PersonalWebsite = () => {
   );
 };
 
-export default PersonalWebsite;
+export default PKGrowthLeaderWebsite;
